@@ -1,17 +1,9 @@
-import React, { FC, ReactElement, useState } from 'react'
+import React, { FC, ReactElement } from 'react'
 import './counter.scss'
+import { useCount } from '../components/hooks/use-Count'
 
 const Counter02: FC = (): ReactElement => {
-    const [count, setCount] = useState<number>(0)
-    const decrease = () => {
-        setCount(count - 1)
-    }
-    const increase = () => {
-        setCount(count + 1)
-    }
-    const reset = () => {
-        setCount(0)
-    }
+    const { count, decrease, increase, reset } = useCount()
     return (
         <div className="counter">
             <div className="displayer">计数: {count}</div>
